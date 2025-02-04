@@ -43,6 +43,7 @@ namespace Streamove
             {
                 this.players.Remove(player);
                 log.Save($"Играч с позиция:{player.Position} и име:{player.Name} беше успешно премахнат - {DateTime.Now}.");
+                return;
             }
             Console.WriteLine($"Играч с името:{name} не съществува");
             log.Save($"Играч с името:{name} не съществува");
