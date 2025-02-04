@@ -44,13 +44,7 @@ while (command != "exit")
                 Console.WriteLine("Несъществуващ отбор.");
                 break;
             }
-            var playerToRemove = players.FirstOrDefault(x => x.Name == commands[2]);
-            if (playerToRemove is null)
-            {
-                Console.WriteLine("Несъществуващ играч.");
-                break;
-            }
-            teamToFindToRemove.AddPlayer(playerToRemove);
+            teamToFindToRemove.RemovePlayer(commands[2]);
             break;
         case "print_team":
             var teamToFindLog = teams.FirstOrDefault(x => x.Name == commands[1]);
