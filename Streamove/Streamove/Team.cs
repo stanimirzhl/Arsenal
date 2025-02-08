@@ -12,10 +12,11 @@ namespace Streamove
         public string Name { get; set; }
         private List<IPlayer> players = new List<IPlayer>();
         private ILog log;
-        public Team(string name, string path = @"C:\Users\Student4\Desktop\")
+        public Team(string name)
         {
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             this.Name = name;
-            this.log = new TXT($"{path}{this.Name}.txt");
+            this.log = new TXT(@$"{path}\{this.Name}.txt");
             log.Save($"{this.Name} отбор беше създаден на {DateTime.Now}");
         }
         public void PrintLog()
